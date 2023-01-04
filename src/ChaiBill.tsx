@@ -41,11 +41,16 @@ const ChaiBill = () => {
       filteredUsers,
       filteredUsers[randomNumber],
     );
+    const randomValueName = filteredUsers[randomNumber];
     if (filteredUsers.length) {
       setPaidList([...paidList, filteredUsers[randomNumber]]);
-      setRandomPerson(filteredUsers[randomNumber]);
+      setTimeout(() => {
+        setRandomPerson(randomValueName);
+      }, 1000);
     } else {
-      setRandomPerson(filteredUsers[randomNumber]);
+      setTimeout(() => {
+        setRandomPerson(randomValueName);
+      }, 1000);
       setPaidList([filteredUsers[randomNumber]]);
     }
   };
@@ -59,7 +64,7 @@ const ChaiBill = () => {
 
   const handleScratch = (value?: any) => {
     console.log('value', value);
-    if (value > 20) {
+    if (value > 15) {
       setEnableGif(true);
     }
   };
@@ -116,6 +121,7 @@ const ChaiBill = () => {
                   alignItems: 'center',
                   borderRadius: 20,
                   overflow: 'hidden',
+                  elevation: 999,
                 }}>
                 {!enableGif ? (
                   <ScratchCard
@@ -138,7 +144,7 @@ const ChaiBill = () => {
                     }}>
                     <Image
                       source={require('./assets/images/blast-gif.gif')}
-                      style={{width: 250, height: 200, zIndex: 1}}
+                      style={{width: 250, height: 200}}
                     />
                   </View>
                 )}
