@@ -15,15 +15,18 @@ const ScreenController = () => {
     'Santoosh',
   ];
   useEffect(() => {
-    console.log(
-      'JSON.stringify(list)',
-      JSON.stringify(list),
-      typeof JSON.stringify(list),
-    );
-    (async () =>
-      await AsyncStorage.setItem('usersList', JSON.stringify(list)))();
+    AsyncStorage.getItem('usersList').then(mainList => {
+      if (!mainList) {
+        console.log(
+          'JSON.stringify(list)',
+          JSON.stringify(list),
+          typeof JSON.stringify(list),
+        );
+        (async () =>
+          await AsyncStorage.setItem('usersList', JSON.stringify(list)))();
+      }
+    });
   }, []);
-  const handleScratch = () => {};
   return (
     <View style={{flex: 1}}>
       <View

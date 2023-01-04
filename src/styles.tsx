@@ -72,9 +72,28 @@ export const LineDivider = styled.View`
   margin: ${(props: {margins: any}) => props.margins || '13px 0px 0px 0px'};
 `;
 export const UserListScroll = styled.ScrollView`
-  margin: 0 50px;
+  margin: 0 40px;
   border: 1px solid green;
   border-radius: 20px;
   padding: 0 20px;
   max-height: 400px;
+`;
+
+export const UserUpdateBtn = styled.TouchableOpacity`
+  align-self: center;
+  width: 55%;
+  margin-top: 20%;
+  background-color: ${(props: {bgColor: any}) => props.bgColor || '#73b34e'};
+  border-radius: 30px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  elevation: 10;
+  shadowcolor: ${(props: {shadowColor: any}) => props.shadowColor || '#73b34e'};
+`;
+export const UserUpdateBtnText = styled.Text`
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
 `;
