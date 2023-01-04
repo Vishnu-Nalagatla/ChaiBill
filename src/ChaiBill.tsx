@@ -108,12 +108,6 @@ const ChaiBill = () => {
         }}>
         {buttonStart && (
           <>
-            <View style={{width: '100%', elevation: enableGif ? 999 : 0}}>
-              <Text style={{textAlign: 'center', color: 'black', fontSize: 40}}>
-                {seconds <= 0 ? randomPerson : seconds}
-              </Text>
-            </View>
-
             {seconds == 0 && (
               <View
                 style={{
@@ -150,6 +144,11 @@ const ChaiBill = () => {
                 )}
               </View>
             )}
+            <View style={{width: '100%', elevation: enableGif ? 999 : 0}}>
+              <Text style={{textAlign: 'center', color: 'black', fontSize: 40}}>
+                {seconds <= 0 ? randomPerson : seconds}
+              </Text>
+            </View>
           </>
         )}
       </View>
