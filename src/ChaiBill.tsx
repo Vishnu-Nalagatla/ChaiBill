@@ -8,7 +8,6 @@ const ChaiBill = () => {
   const clearRef = useRef<any>(null);
   const [paidList, setPaidList] = useState<string[]>([]);
   const [randomPerson, setRandomPerson] = useState('');
-  console.log('work repo from work commit');
   const [secondsLeft, setSecondsLeft] = useState(5);
   const [buttonStart, setButtonStart] = useState(false);
   const [enableGif, setEnableGif] = useState(false);
